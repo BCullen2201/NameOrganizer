@@ -1,2 +1,3 @@
 # NameOrganizer
-Project I used to learn Python
+
+Small project I'm using to learn Python
