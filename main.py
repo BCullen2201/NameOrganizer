@@ -32,6 +32,10 @@ def addName():
 
 def changeName():
     system("clear")
+    if len(names) == 0:
+        print("There are no names to change!")
+        return
+    
     oldName = input("Enter old name you wish to change: ")
     if oldName not in names:
         print("Old name does not exist!")
