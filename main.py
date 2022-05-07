@@ -4,19 +4,19 @@ import sys
 names = [] # list to store the names in
 
 # the main menu of the program, tells user to make a choice
-mainMenu = """Name Organizer
-=====================
-
-Type the number of an option, then hit ENTER
-
-1 - Add a name
-2 - Change a name
-3 - Delete a name
-4 - List all names
-5 - Delete all names
-6 - Quit
-
-=====================
+mainMenu = """                   Name Organizer
+######################################################
+#                                                    #
+#    Type the number of an option, then hit ENTER    #
+#                                                    #
+#    1 - Add a name                                  #
+#    2 - Change a name                               #
+#    3 - Delete a name                               #
+#    4 - List all names                              #
+#    5 - Delete all names                            #
+#    6 - Quit                                        #
+#                                                    #
+######################################################
 """
 
 # These functions get called in main() when the user makes a choice
