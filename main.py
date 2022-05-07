@@ -20,6 +20,8 @@ Type the number of an option, then hit ENTER
 """
 
 # These functions get called in main() when the user makes a choice
+
+### Asks user for a name, and stores it in list 'names' ###
 def addName():
     system("clear")
     newName = input("Enter new name: ")
@@ -31,6 +33,7 @@ def addName():
         names.append(newName)
         print("Done!")
 
+### User selects a name to change, and what to change it to ###
 def changeName():
     system("clear")
     if len(names) == 0:
@@ -53,6 +56,7 @@ def changeName():
         names.append(newName)
         print("Done!")
     
+### User selects a name to delete, chosen name gets removed from list 'names' ###
 def deleteName():
     system("clear")
     oldName = input("Enter name you wish to delete: ")
@@ -65,6 +69,7 @@ def deleteName():
         print("Done!")
     
 
+### Lists all items in list 'names' in alphabetical order ###
 def listNames():
     system("clear")
     names.sort()
@@ -72,6 +77,7 @@ def listNames():
     for i in names:
         print(i)
 
+### Delets all items from list 'names', if user is sure they want to ###
 def deleteAllNames():
     system("clear")
     userIsSure = input("Are you sure you want to DELETE ALL NAMES? Y or N: ")
@@ -86,6 +92,7 @@ def deleteAllNames():
         print("Not a valid input!")
         return
 
+### Exits from program if user is sure they want to ###
 def userExit():
     system("clear")
     userExitChoice = input("Are you sure you want to exit? Y or N: ")
@@ -98,7 +105,7 @@ def userExit():
         print("Not a valid input!")
         return
 
-# debug function, quick way to add names to the dictionary
+### Quick way to add items to list 'names' ###
 def debug():
     system("clear")
     
@@ -110,7 +117,7 @@ def debug():
 
     print("Names added")
 
-# Main method, gets called at the start of the program
+### Main method, gets called at the start of the program ###
 def main():
     print(mainMenu)
     choice = input().strip()
