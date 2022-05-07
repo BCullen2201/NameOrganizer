@@ -1,7 +1,7 @@
 from os import system
 import sys
 
-names = {} # dictionary to store the names in
+names = [] # list to store the names in
 
 # the main menu of the program, tells user to make a choice
 mainMenu = """Name Organizer
@@ -25,9 +25,10 @@ def addName():
     newName = input("Enter new name: ")
     if newName in names:
         print("Name already exists!")
+        return
     else:
         print(f"Adding name {newName}...")
-        names[newName] = newName
+        names.append(newName)
         print("Done!")
 
 def changeName():
@@ -42,16 +43,14 @@ def changeName():
         return
     else:
         newName = input("Enter new name: ")
-
-    if newName == oldName:
-        print("New name already exists!")
-        return
-    elif newName in names:
+    
+    if newName in names:
         print("Name already exists!")
+        return
     else:
         print("Changing name...")
-        del names[oldName]
-        names[newName] = newName
+        names.remove(oldName)
+        names.append(newName)
         print("Done!")
     
 def deleteName():
@@ -59,16 +58,18 @@ def deleteName():
     oldName = input("Enter name you wish to delete: ")
     if oldName not in names:
         print("Name does not exist!")
+        return
     else:
         print("Deleting name...")
-        del names[oldName]
+        names.remove(oldName)
         print("Done!")
     
 
-def listNames(): # maybe find a way to sort names more elegantly?
+def listNames():
     system("clear")
-    sortedNames = sorted(names, key=str.lower)
-    for i in sortedNames:
+    names.sort()
+    
+    for i in names:
         print(i)
 
 def deleteAllNames():
@@ -76,13 +77,14 @@ def deleteAllNames():
     userIsSure = input("Are you sure you want to DELETE ALL NAMES? Y or N: ")
     if userIsSure == "Y" or userIsSure == "y":
         print("Deleting all names...")
-        for name in list(names):
-            del names[name]
+        names.clear()
         print("Done!")
     elif userIsSure == "N" or userIsSure == "n":
         print("Action cancelled!")
+        return
     else:
         print("Not a valid input!")
+        return
 
 def userExit():
     system("clear")
@@ -91,13 +93,21 @@ def userExit():
         sys.exit(0)
     elif userExitChoice == "N" or userExitChoice == "n":
         print("Action cancelled!")
+        return
     else:
         print("Not a valid input!")
+        return
 
 # debug function, quick way to add names to the dictionary
 def debug():
     system("clear")
-    names.update({'Tim': 'Tim', 'John': 'John', 'Katie': 'Katie', 'Maria': 'Maria', 'Jessie': 'Jessie'})
+    
+    names.append("Tim")
+    names.append("John")
+    names.append("Katie")
+    names.append("Maria")
+    names.append("Jessie")
+
     print("Names added")
 
 # Main method, gets called at the start of the program
