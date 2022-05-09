@@ -119,24 +119,29 @@ def debug():
 
 ### Main method, gets called at the start of the program ###
 def main():
-    print(mainMenu)
-    choice = input().strip()
-    if choice == "1":
-        addName()
-    elif choice == "2":
-        changeName()
-    elif choice == "3":
-        deleteName()
-    elif choice == "4":
-        listNames()
-    elif choice == "5":
-        deleteAllNames()
-    elif choice == "6":
-        userExit()
-    elif choice == "7":
-        debug()
-    else:
-        print("Not a valid input")
+    print(mainMenu) # shows user mainMenu
+    choice = input().strip() # gets users choice
+    match choice: # calls func based on users choice
+        case "1":
+            addName()
+        case "2":
+            changeName()
+        case "3":
+            deleteName()
+        case "4":
+            listNames()
+        case "5":
+            deleteAllNames()
+        case "6":
+            userExit()
+        case "7": # for debugging, not shown in 'mainMenu'
+            debug()
+        case "8": # for debugging, not shown in 'mainMenu'
+            system("clear")
+            print(names)
+        case default: # if user inputs something other than choices above
+            print("Not a valid input!")
+            return
     
 
 # infinite loop keeps program open
