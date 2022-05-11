@@ -1,9 +1,6 @@
 from os import system
 import sys
 
-names = [] # list to store the names in
-
-# the main menu of the program, tells user to make a choice
 mainMenu = """                   Name Organizer
 ######################################################
 #                                                    #
@@ -19,9 +16,12 @@ mainMenu = """                   Name Organizer
 ######################################################
 """
 
-# These functions get called in main() when the user makes a choice
+######################################################
+###  TO DO: Let user put in multiple of same name  ###
+######################################################
 
-### Asks user for a name, and stores it in list 'names' ###
+names = []
+
 def addName():
     system("clear")
     newName = input("Enter new name: ")
@@ -33,7 +33,6 @@ def addName():
         names.append(newName)
         print("Done!")
 
-### User selects a name to change, and what to change it to ###
 def changeName():
     system("clear")
     if len(names) == 0:
@@ -56,7 +55,6 @@ def changeName():
         names.append(newName)
         print("Done!")
     
-### User selects a name to delete, chosen name gets removed from list 'names' ###
 def deleteName():
     system("clear")
     oldName = input("Enter name you wish to delete: ")
@@ -67,9 +65,7 @@ def deleteName():
         print("Deleting name...")
         names.remove(oldName)
         print("Done!")
-    
 
-### Lists all items in list 'names' in alphabetical order ###
 def listNames():
     system("clear")
     names.sort()
@@ -77,7 +73,6 @@ def listNames():
     for i in names:
         print(i)
 
-### Delets all items from list 'names', if user is sure they want to ###
 def deleteAllNames():
     system("clear")
     userIsSure = input("Are you sure you want to DELETE ALL NAMES? Y or N: ")
@@ -92,7 +87,6 @@ def deleteAllNames():
         print("Not a valid input!")
         return
 
-### Exits from program if user is sure they want to ###
 def userExit():
     system("clear")
     userExitChoice = input("Are you sure you want to exit? Y or N: ")
@@ -105,8 +99,7 @@ def userExit():
         print("Not a valid input!")
         return
 
-### Quick way to add items to list 'names' ###
-def debug():
+def debug(): # add names to 'names' so I don't have to type a bunch in
     system("clear")
     
     names.append("Tim")
@@ -117,11 +110,10 @@ def debug():
 
     print("Names added")
 
-### Main method, gets called at the start of the program ###
 def main():
-    print(mainMenu) # shows user mainMenu
-    choice = input().strip() # gets users choice
-    match choice: # calls func based on users choice
+    print(mainMenu)
+    choice = input().strip()
+    match choice:
         case "1":
             addName()
         case "2":
@@ -139,13 +131,11 @@ def main():
         case "8": # for debugging, not shown in 'mainMenu'
             system("clear")
             print(names)
-        case default: # if user inputs something other than choices above
+        case default:
             print("Not a valid input!")
             return
-    
 
-# infinite loop keeps program open
-while True:
+while True: # keeps window open
     system("clear") # clears the screen before calling main() so the screen isnt cluttered
     main()
     input("\nPress enter to continue: ") # global 'reset', so i dont have to do it at the end of each function
