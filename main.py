@@ -16,22 +16,15 @@ mainMenu = """                   Name Organizer
 ######################################################
 """
 
-######################################################
-###  TO DO: Let user put in multiple of same name  ###
-######################################################
-
 names = []
 
 def addName():
     system("clear")
     newName = input("Enter new name: ")
-    if newName in names:
-        print("Name already exists!")
-        return
-    else:
-        print(f"Adding name {newName}...")
-        names.append(newName)
-        print("Done!")
+    
+    print(f"Adding name {newName}...")
+    names.append(newName)
+    print("Done!")
 
 def changeName():
     system("clear")
@@ -40,20 +33,17 @@ def changeName():
         return
     
     oldName = input("Enter old name you wish to change: ")
+    
     if oldName not in names:
         print("Old name does not exist!")
         return
     else:
         newName = input("Enter new name: ")
     
-    if newName in names:
-        print("Name already exists!")
-        return
-    else:
-        print("Changing name...")
-        names.remove(oldName)
-        names.append(newName)
-        print("Done!")
+    print("Changing name...")
+    names.remove(oldName)
+    names.append(newName)
+    print("Done!")
     
 def deleteName():
     system("clear")
