@@ -111,6 +111,7 @@ def debug(): # add names to 'names' so I don't have to type a bunch in
     print("Names added")
 
 def main():
+    system("clear")
     print(mainMenu)
     choice = input().strip()
     match choice:
@@ -135,7 +136,7 @@ def main():
             print("Not a valid input!")
             return
 
-while True: # keeps window open
-    system("clear") # clears the screen before calling main() so the screen isnt cluttered
-    main()
-    input("\nPress enter to continue: ") # global 'reset', so i dont have to do it at the end of each function
+if __name__ == "__main__":
+    while True:
+        main()
+        input("Press ENTER to continue...")
