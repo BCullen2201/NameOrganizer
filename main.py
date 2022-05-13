@@ -3,16 +3,16 @@ import sys
 
 mainMenu = """                   Name Organizer
 ######################################################
-#                                                    #
-#    Type the number of an option, then hit ENTER    #
-#                                                    #
-#    1 - Add a name                                  #
-#    2 - Change a name                               #
-#    3 - Delete a name                               #
-#    4 - List all names                              #
-#    5 - Delete all names                            #
-#    6 - Quit                                        #
-#                                                    #
+##                                                  ##
+##   Type the number of an option, then hit ENTER   ##
+##                                                  ##
+##   1 - Add a name                                 ##
+##   2 - Change a name                              ##
+##   3 - Delete a name                              ##
+##   4 - List all names                             ##
+##   5 - Delete all names                           ##
+##   6 - Quit                                       ##
+##                                                  ##
 ######################################################
 """
 
