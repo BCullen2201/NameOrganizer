@@ -109,7 +109,7 @@ def main():
     while True:
         system("clear")
         print(mainMenu)
-        choice = input().strip()
+        choice = input(">").strip()
         match choice:
             case "1":
                 addName()
