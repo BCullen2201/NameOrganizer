@@ -32,7 +32,9 @@ def changeName():
         print("There are no names to change!")
         return
     
-    oldName = input("Enter old name you wish to change: ")
+    for i in names:
+        print(i)
+    oldName = input("\nEnter old name you wish to change: ")
     
     if oldName not in names:
         print("Old name does not exist!")
@@ -47,7 +49,10 @@ def changeName():
     
 def deleteName():
     system("clear")
-    oldName = input("Enter name you wish to delete: ")
+
+    for i in names:
+        print(i)
+    oldName = input("\nEnter name you wish to delete: ")
     if oldName not in names:
         print("Name does not exist!")
         return
