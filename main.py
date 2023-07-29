@@ -101,32 +101,33 @@ def debug(): # add names to 'names' so I don't have to type a bunch in
     print("Names added")
 
 def main():
-    system("clear")
-    print(mainMenu)
-    choice = input().strip()
-    match choice:
-        case "1":
-            addName()
-        case "2":
-            changeName()
-        case "3":
-            deleteName()
-        case "4":
-            listNames()
-        case "5":
-            deleteAllNames()
-        case "6":
-            userExit()
-        case "7": # for debugging, not shown in 'mainMenu'
-            debug()
-        case "8": # for debugging, not shown in 'mainMenu'
-            system("clear")
-            print(names)
-        case default:
-            print("Not a valid input!")
-            return
+    while True:
+        system("clear")
+        print(mainMenu)
+        choice = input().strip()
+        match choice:
+            case "1":
+                addName()
+            case "2":
+                changeName()
+            case "3":
+                deleteName()
+            case "4":
+                listNames()
+            case "5":
+                deleteAllNames()
+            case "6":
+                userExit()
+            case "7": # for debugging, not shown in 'mainMenu'
+                debug()
+            case "8": # for debugging, not shown in 'mainMenu'
+                system("clear")
+                print(names)
+            case default:
+                print("Not a valid input!")
+                return
+
+        input("Press ENTER to continue...")
 
 if __name__ == "__main__":
-    while True:
-        main()
-        input("Press ENTER to continue...")
+    main()
