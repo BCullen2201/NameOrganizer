@@ -1,5 +1,5 @@
 from os import system
-import sys
+from sys import exit
 
 mainMenu = """                   Name Organizer
 ######################################################
@@ -86,7 +86,7 @@ def userExit():
     system("clear")
     userExitChoice = input("Are you sure you want to exit? Y or N: ")
     if userExitChoice == "Y" or userExitChoice == "y":
-        sys.exit(0)
+        exit(0)
     elif userExitChoice == "N" or userExitChoice == "n":
         print("Action cancelled!")
         return
